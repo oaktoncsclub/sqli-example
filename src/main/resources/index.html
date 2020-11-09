@@ -1,0 +1,64 @@
+<html lang="us">
+<head>
+    <title>CSCS Club Login</title>
+    <style>
+        form.form-example {
+            display: table;
+        }
+
+        div.form-example {
+            display: table-row;
+        }
+        form.form-example {
+            margin: 30px;
+        }
+
+        label, input {
+            display: table-cell;
+            margin-bottom: 10px;
+        }
+
+        label {
+            padding-right: 10px;
+        }
+        .warning {
+            background: lightcoral;
+            padding: 10px;
+            border: 5px solid #d16f6f;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .good {
+            background: aquamarine;
+            border: 5px solid #64c364;
+        }
+    </style>
+</head>
+<body>
+
+<div class="warning" style="WARNING_DISPLAY">
+    WARNING_MESSAGE
+</div>
+
+<form class="form-example">
+    <div class="form-example">
+        <label for="name">Enter your username: </label>
+        <input type="text" name="name" id="name" required autocomplete="off">
+    </div>
+    <div class="form-example">
+        <label for="password">Enter your password: </label>
+        <input type="password" name="password" id="password" required autocomplete="off">
+        <script>
+            function togglePasswordShow() {
+              const x = document.getElementById("password")
+              x.type = x.type === "password" ? "text" : "password";
+            }
+        </script>
+        <input type="checkbox" onclick="togglePasswordShow()">Show Password
+    </div>
+    <div class="form-example">
+        <input type="submit" value="Sign In">
+    </div>
+</form>
+</body>
+</html>

@@ -2,9 +2,6 @@ plugins {
     id 'java'
 }
 
-group 'win.oakcsclub'
-version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
@@ -13,4 +10,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation "com.sparkjava:spark-core:2.9.3"
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+    implementation group: 'org.jdbi', name: 'jdbi3-core', version: '3.16.0'
+    implementation group: 'org.jdbi', name: 'jdbi3-sqlite', version: '3.16.0'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.32.3.2'
 }

